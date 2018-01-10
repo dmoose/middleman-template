@@ -1,0 +1,89 @@
+.c-nav-container {
+  //background-color: tomato;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 2px;
+  width: 100%;
+
+  @include mq($from: tablet) {
+    flex-direction: row;
+  }
+}
+
+.c-nav-logo {
+  //background-color: green;
+  flex: 1 0 0;
+}
+
+.c-nav-logo img {
+  max-height: 85px;
+}
+
+.c-nav-logo a {
+  float: right;
+  margin: 0;
+  padding-right: 2em;
+
+  @include mq($from: tablet) {
+    padding: 0;
+  }
+}
+
+.c-nav-right {
+  //background-color: pink;
+  display: flex;
+  flex-direction: column;
+  padding-right: 1em;
+
+  @include mq($from: tablet) {
+    flex: 3 0 0;
+  }
+
+  @include mq($from: desktop) {
+    padding-right: 5em;
+  }
+}
+
+.c-nav-top-row {
+  align-content: space-around;
+  //background-color: gray;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  //justify-content: space-around;
+  justify-content: flex-end;
+
+  a {
+    color: #72c02c;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+
+.c-nav-bottom-row {
+  align-content: space-around;
+  //background-color: blue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  a {
+    color: rgba(0,0,0,.7);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  a:hover {
+    color: #72c02c;
+    text-decoration: underline;
+  }
+}
+
+.c-nav-right span {
+  //background-color: tan;
+  margin: .5em;
+
+}
+

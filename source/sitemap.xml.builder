@@ -6,7 +6,8 @@ xml.urlset xmlns: "http://www.sitemaps.org/schemas/sitemap/0.9" do
 
   pages.each do |page|
     xml.url do
-      xml.loc URI.join(ENV.fetch("URL"), page.url)
+      #xml.loc URI.join(ENV.fetch("URL"), page.url)
+      xml.loc URI.join('http://localhost:4567', page.url)
     end
   end
 end

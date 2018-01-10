@@ -1,10 +1,12 @@
 activate :aria_current
 activate :autoprefixer
+activate :asset_hash
 
 set :css_dir, "assets/stylesheets"
 set :fonts_dir, "assets/fonts"
 set :images_dir, "assets/images"
 set :js_dir, "assets/javascripts"
+
 set :markdown,
   autolink: true,
   fenced_code_blocks: true,
@@ -19,6 +21,15 @@ set :markdown_engine, :redcarpet
 page "/*.json", layout: false
 page "/*.txt", layout: false
 page "/*.xml", layout: false
+
+activate :blog do |blog|
+  #set options on the blog
+  blog.prefix = 'blog'
+  blog.layout = 'layout-blog'
+  blog.tag_template = 'blog/tag.html'
+  blog.calendar_template = 'blog/calendar.html'
+  blog.sources = "posts/{year}-{month}-{day}-{title}.html"
+end
 
 configure :development do
   activate :livereload do |reload|
